@@ -1,0 +1,118 @@
+import 路由器设置or登录
+import pynput
+from pynput.keyboard import Key,Controller,Listener
+import time
+keyboard1 = Controller()
+from pynput.mouse import Controller
+mouse1 = Controller()
+
+l={}
+
+# 键盘监听
+from pynput.keyboard import Key,Listener
+
+def panduanzuhejian(key):
+    if str(key) == "'q'" and 'Key.alt_l' in l:
+        return 1
+    elif str(key) == "'w'" and 'Key.alt_l' in l:
+        return 2
+    elif str(key) == "'xx'" and 'Key.alt_l' in l:
+        return 3
+    elif str(key) == "'e'" and 'Key.alt_l' in l:
+        return 4
+    elif str(key) == "'x'" and 'Key.alt_l' in l:
+        return 5
+
+def on_press(key):
+
+    print('按下' + str(key))
+    l[str(key)] = 0
+    print(l)
+
+    if panduanzuhejian(key) == 1:
+        print(mouse1.position)
+        a=mouse1.position
+        mouse1.position=(260,1061)
+        mouse1.click(pynput.mouse.Button.left,1)
+        time.sleep(0.1)
+        mouse1.position = (80,15)
+        mouse1.click(pynput.mouse.Button.left, 1)
+        time.sleep(0.1)
+        mouse1.position = a
+        #l.clear()
+    elif panduanzuhejian(key)==2:
+        a = mouse1.position
+
+        mouse1.position = (894,312)
+        mouse1.click(pynput.mouse.Button.left, 1)
+        time.sleep(0.5)
+
+        mouse1.position = (1434,952)
+        mouse1.click(pynput.mouse.Button.left, 1)
+        time.sleep(1)
+
+        mouse1.position = (1005,310)
+        mouse1.click(pynput.mouse.Button.left, 1)
+        time.sleep(0.5)
+        mouse1.position = a
+    elif panduanzuhejian(key)==3:
+
+
+        a = mouse1.position
+
+        mouse1.position = (1652,1058)
+        mouse1.click(pynput.mouse.Button.right, 1)
+
+        mouse1.position = (1652, 1058)
+        keyboard1.press('h')
+        keyboard1.release('h')
+        time.sleep(1)
+
+        mouse1.position = (1652, 1058)
+
+        #mouse1.click(pynput.mouse.Button.right, 1)
+        #time.sleep(1.5)
+        #mouse1.position = (1544,994)
+        #mouse1.position = (1706,910)
+        #mouse1.click(pynput.mouse.Button.left, 1)
+
+
+
+        #mouse1.position = (968,664)
+        #mouse1.click(pynput.mouse.Button.left, 1)
+        #time.sleep(1)
+
+        mouse1.position = (1272,344)
+        mouse1.click(pynput.mouse.Button.left, 1)
+        time.sleep(0.5)
+
+
+        #mouse1.position = a
+
+
+    elif panduanzuhejian(key) == 4:
+        a = mouse1.position
+        mouse1.position = (174, 1061)
+        mouse1.click(pynput.mouse.Button.left, 1)
+        time.sleep(0.1)
+        mouse1.position = a
+    elif panduanzuhejian(key) == 5:
+        try:
+            路由器设置or登录.main1()
+        except:
+            pass
+
+
+
+def on_release(key):
+    print('松开'+str(key))
+    l.clear()
+
+
+
+
+#监听键盘按键
+with Listener(on_press=on_press,on_release=on_release) as listener:
+    listener.join()
+#停止监视
+Listener.stop()
