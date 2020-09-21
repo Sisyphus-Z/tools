@@ -32,14 +32,17 @@ def on_press(key):
     if panduanzuhejian(key) == 1:
         print(mouse1.position)
         a=mouse1.position
+        mouse1.position = (1919,1079)
+        mouse1.click(pynput.mouse.Button.left, 1)
+        time.sleep(0.1)
         mouse1.position=(260,1061)
         mouse1.click(pynput.mouse.Button.left,1)
-        time.sleep(0.1)
+        time.sleep(0.3)
         mouse1.position = (80,15)
         mouse1.click(pynput.mouse.Button.left, 1)
         time.sleep(0.1)
         mouse1.position = a
-        #l.clear()
+
     elif panduanzuhejian(key)==2:
         a = mouse1.position
 
