@@ -48,7 +48,7 @@ def on_press(key):
 
         mouse1.position = (894,312)
         mouse1.click(pynput.mouse.Button.left, 1)
-        time.sleep(0.5)
+        time.sleep(0.3)
 
         mouse1.position = (1434,952)
         mouse1.click(pynput.mouse.Button.left, 1)
