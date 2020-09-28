@@ -1,3 +1,4 @@
+import 路由器抓包
 import 路由器设置or登录
 import pynput
 from pynput.keyboard import Key,Controller,Listener
@@ -20,8 +21,11 @@ def panduanzuhejian(key):
         return 3
     elif str(key) == "'e'" and 'Key.alt_l' in l:
         return 4
-    elif str(key) == "'x'" and 'Key.alt_l' in l:
+
+    elif str(key) == "'z'" and 'Key.alt_l' in l:
         return 5
+    elif str(key) == "'x'" and 'Key.alt_l' in l:
+        return 6
 
 def on_press(key):
 
@@ -52,11 +56,11 @@ def on_press(key):
 
         mouse1.position = (1434,952)
         mouse1.click(pynput.mouse.Button.left, 1)
-        time.sleep(1)
+        time.sleep(0.5)
 
         mouse1.position = (1005,310)
         mouse1.click(pynput.mouse.Button.left, 1)
-        time.sleep(0.5)
+        time.sleep(0.4)
         mouse1.position = a
     elif panduanzuhejian(key)==3:
 
@@ -99,11 +103,20 @@ def on_press(key):
         mouse1.click(pynput.mouse.Button.left, 1)
         time.sleep(0.1)
         mouse1.position = a
+
+
     elif panduanzuhejian(key) == 5:
         try:
             路由器设置or登录.main1()
         except:
             pass
+
+    elif panduanzuhejian(key) ==6:
+        try:
+            路由器抓包.main1()
+        except:
+            pass
+
 
 
 
