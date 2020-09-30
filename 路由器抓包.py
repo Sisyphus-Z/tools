@@ -78,7 +78,7 @@ def main1():
             x.click()
         f()
 
-        time.sleep(6)
+        time.sleep(10)
 
         @w1
         def f():

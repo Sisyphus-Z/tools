@@ -72,7 +72,7 @@ def main1():
         def f():
             x = driver.find_element_by_xpath("//input[@id='userpassword_ctrl']")
             x.clear()
-            x.send_keys('qqqqqqqq')
+            x.send_keys('11111111')
         f()
 
         @w1
@@ -80,7 +80,7 @@ def main1():
             x = driver.find_element_by_xpath("//div[@id='loginbtn']")
             x.click()
         f()
-        time.sleep(3)
+        time.sleep(1)
 
     def xiangdao():
         #可能有推荐安装智慧生活
@@ -130,7 +130,7 @@ def main1():
         def f():
             x=driver.find_element_by_xpath("//input[@id='SsidSettings_guide_wifi_name_ctrl']")
             x.clear()
-            x.send_keys('!!!!!!!!!!')
+            x.send_keys('!!!!!!!!')
             #!嘿嘿我是第一个感叹号
         f()
 
@@ -139,7 +139,7 @@ def main1():
             x=driver.find_element_by_xpath("//input[@id='SsidSettings_guide_wifi_password_ctrl']")
 
             x.clear()
-            x.send_keys('qqqqqqqq')
+            x.send_keys('11111111')
         f()
 
         @w1
