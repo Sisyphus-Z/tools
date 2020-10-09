@@ -1,7 +1,7 @@
-import 路由器抓包
 import 路由器设置or登录
+import 路由器抓包
 import pynput
-from pynput.keyboard import Key,Controller,Listener
+from pynput.keyboard import Controller
 import time
 keyboard1 = Controller()
 from pynput.mouse import Controller
@@ -10,7 +10,7 @@ mouse1 = Controller()
 l={}
 
 # 键盘监听
-from pynput.keyboard import Key,Listener
+from pynput.keyboard import Listener
 
 def panduanzuhejian(key):
     if str(key) == "'q'" and 'Key.alt_l' in l:
