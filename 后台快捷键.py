@@ -4,11 +4,11 @@ import pynput
 from pynput.keyboard import Controller
 import time
 keyboard1 = Controller()
-from pynput.mouse import Controller
+from pynput.mouse import Controller,Button
 mouse1 = Controller()
 
 l={}
-
+speed=40
 # 键盘监听
 from pynput.keyboard import Listener
 
@@ -26,6 +26,28 @@ def panduanzuhejian(key):
         return 5
     elif str(key) == "'x'" and 'Key.alt_l' in l:
         return 6
+
+
+
+    elif (str(key) == "'w'" and "'l'" in l) or str(key) == "<104>":
+        return 'up'
+    elif (str(key) == "'s'" and "'l'" in l) or str(key) == "<101>":
+        return 'down'
+    elif (str(key) == "'a'" and "'l'" in l) or str(key) == "<100>":
+        return 'left'
+    elif (str(key) == "'d'" and "'l'" in l) or str(key) == "<102>":
+        return 'right'
+    elif (str(key) == "'j'" and "'l'" in l) or str(key) == "<97>":
+        return 'click_l'
+    elif (str(key) == "'k'" and "'l'" in l) or str(key) == "<99>":
+        return 'click_r'
+    elif (str(key) == "'xxj'" and "'xxl'" in l) or str(key) == "<103>":
+        return 'scroll_up'
+    elif (str(key) == "'xxk'" and "'xxl'" in l) or str(key) == "<105>":
+        return 'scroll_down'
+    #scroll(0, -100)
+
+
 
 def on_press(key):
 
@@ -117,12 +139,35 @@ def on_press(key):
         except:
             pass
 
+'''
+    elif panduanzuhejian(key) =='up':
+        mouse1.move(0,-speed)
+    elif panduanzuhejian(key) =='down':
+        mouse1.move(0,speed)
+    elif panduanzuhejian(key) =='left':
+        mouse1.move(-speed,0)
+    elif panduanzuhejian(key) =='right':
+        mouse1.move(speed,0)
+    elif panduanzuhejian(key) =='click_l':
+        mouse1.click(Button.left,1)
+    elif panduanzuhejian(key) =='click_r':
+        mouse1.click(Button.right,1)
+    elif panduanzuhejian(key) =='scroll_up':
+        mouse1.scroll(0,4)
+    elif panduanzuhejian(key) =='scroll_down':
+        mouse1.scroll(0,-4)
+'''
 
 
 
 def on_release(key):
     print('松开'+str(key))
-    l.clear()
+    if "'l'" in l and ("'w'" in l)or("'a'" in l)or("'s'" in l)or("'d'" in l):
+        l.clear()
+        l["'l'"]=0
+
+    else:
+        l.clear()
 
 
 
