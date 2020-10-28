@@ -8,7 +8,7 @@ from pynput.mouse import Controller,Button
 mouse1 = Controller()
 
 l={}
-speed=40
+speed=30
 # 键盘监听
 from pynput.keyboard import Listener
 
@@ -139,7 +139,7 @@ def on_press(key):
         except:
             pass
 
-'''
+
     elif panduanzuhejian(key) =='up':
         mouse1.move(0,-speed)
     elif panduanzuhejian(key) =='down':
@@ -156,7 +156,7 @@ def on_press(key):
         mouse1.scroll(0,4)
     elif panduanzuhejian(key) =='scroll_down':
         mouse1.scroll(0,-4)
-'''
+
 
 
 
