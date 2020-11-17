@@ -67,22 +67,22 @@ def on_click(x, y, button, pressed):
             keyboard1.press(keyboard.Key.esc)
             keyboard1.release(keyboard.Key.esc)
 
-            keyboard1.press(keyboard.Key.ctrl)
-            keyboard1.press(keyboard.Key.shift)
+            keyboard1.press(keyboard.Key.ctrl_l)
+            keyboard1.press(keyboard.Key.shift_l)
             keyboard1.press(keyboard.Key.tab)
             time.sleep(0.4)
-            keyboard1.release(keyboard.Key.ctrl)
-            keyboard1.release(keyboard.Key.shift)
+            keyboard1.release(keyboard.Key.ctrl_l)
+            keyboard1.release(keyboard.Key.shift_l)
             keyboard1.release(keyboard.Key.tab)
         elif shoushi=='right':
             time.sleep(0.35)
             keyboard1.press(keyboard.Key.esc)
             keyboard1.release(keyboard.Key.esc)
-            
-            keyboard1.press(keyboard.Key.ctrl)
+
+            keyboard1.press(keyboard.Key.ctrl_l)
             keyboard1.press(keyboard.Key.tab)
             time.sleep(0.4)
-            keyboard1.release(keyboard.Key.ctrl)
+            keyboard1.release(keyboard.Key.ctrl_l)
             keyboard1.release(keyboard.Key.tab)
 
         shoushi=None
