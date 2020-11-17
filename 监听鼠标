@@ -8,21 +8,23 @@ keyboard1=keyboard.Controller()
 pos=[9999,9999]
 
 
-def on_move(x, y):
-    #print('Pointer moved to {0}'.format((x, y)))
-    if x-pos[0]>=300:
-        print(2222222222222)
+def on_move(x, y):   
+
+    if x-pos[0]>=200:
+
+        pos[0] = 9999
 
         keyboard1.press(keyboard.Key.ctrl)
         keyboard1.press('w')
-        time.sleep(0.2)
+        time.sleep(0.4)
         keyboard1.release(keyboard.Key.ctrl)
         keyboard1.release('w')
-        pos[1]=9999
+
+
 
 
 def on_click(x, y, button, pressed):
-    #print('{0} at {1}'.format('Pressed' if pressed else 'Released', (x, y)))
+    
     if str(button)=='Button.right' and pressed==True:
         pos[0]=mouse1.position[0]
         print(mouse1.position)
@@ -31,18 +33,13 @@ def on_click(x, y, button, pressed):
         pos[0]=9999
         pos[1]=9999
 
-
-
-
-
-
 def on_scroll(x, y, dx, dy):
-    print('Scrolled {0} at {1}'.format(
+    # print('Scrolled {0} at {1}'.format(
+    #
+    #     'down' if dy < 0 else 'up', (x, y)))
+    pass
 
-        'down' if dy < 0 else 'up', (x, y)))
 
-
-# Collect events until released
 
 with mouse.Listener(on_move=on_move, on_click=on_click,
 
