@@ -11,7 +11,7 @@ shoushi=None
 
 def panduanshoushi(x,y):
     global shoushi
-    print(x-pos[0])
+
     if y-pos[1]>=200 and abs(x-pos[0])<=150 and shoushi==None:
         shoushi='down'
 
@@ -27,14 +27,6 @@ def panduanshoushi(x,y):
 def on_move(x, y):
     if ispressed==True:
         panduanshoushi(x, y)
-
-
-
-
-
-
-
-
 
 
 def on_click(x, y, button, pressed):
