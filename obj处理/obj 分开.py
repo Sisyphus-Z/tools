@@ -84,7 +84,7 @@ while 1:
 
 
 
-    if ff.find('v ')!=0 and (ff_next.find('v ')==0 or ff_next==''):
+    if (ff.find('f ')==0 or ff.find('s ')==0) and (ff_next.find('v ')==0 or ff_next==''):
 
 
 
