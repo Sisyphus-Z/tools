@@ -28,16 +28,17 @@ def func1(parameter):
     s1=parameter.group("s1")
     s2 = parameter.group("s2")
     s3 = parameter.group("s3")
-    print(s1, s2, s3)
 
 
-    s1 = str(int(s1) - v)
+
+    s1 = str(int(s1) - v+v_now)
     if int(s1) <=0:
         print('error:f 中有负数或0')
+
     #s2可能性 '/' ‘/2'
     if s2 != '' and s2 !='/':
         s2 = s2.replace('/', '')
-        s2 = str(int(s2) - vt)
+        s2 = str(int(s2) - vt+vt_now)
         if int(s2) <= 0:
             print('error:f 中有负数或0')
         s2='/'+s2
@@ -45,12 +46,12 @@ def func1(parameter):
     # s3可能性 '/' ‘/e' ''
     if s3 != '' and s3 !='/':
         s3 = s3.replace('/', '')
-        s3 = str(int(s3) - vn)
+        s3 = str(int(s3) - vn+vn_now)
         if int(s3) <= 0:
             print('error:f 中有负数或0')
         s3= '/'+s3
 
-    return ' {}{}{}\n'.format(s1,s2,s3)
+    return ' {}{}{}'.format(s1,s2,s3)
 
 
 while 1:
