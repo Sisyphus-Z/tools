@@ -1,6 +1,6 @@
 # --------------------settings-------------------
 #
-filename='全部.obj'
+filename= '头发.obj'
 #
 # --------------------settings-------------------
 import re
@@ -84,11 +84,11 @@ while 1:
 
 
 
-    if ff.find('v ')!=0 and (ff_next.find('v ')==0 or ff_next==''):
+    if ff.find('v ')!=0 and (ff_next.find('v ')==0 or ff_next=='') and ff !='':
 
 
 
-        with open(filename+str(times)+'.obj','w') as t:
+        with open(filename.replace('.obj','')+str(times)+'.obj','w') as t:
 
             t.write("".join(obj))
             xxx += 1

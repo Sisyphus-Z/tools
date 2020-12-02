@@ -1,7 +1,7 @@
 # --------------------settings-------------------
 #
-filename= '5.obj'
-times=758
+filename= 'a.obj'
+times=1
 #
 # --------------------settings-------------------
 
