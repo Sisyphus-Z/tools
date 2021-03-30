@@ -2,7 +2,7 @@ import os
 
 def main():
     # 改变工作目录
-    os.chdir("E:\pythonProject2")
+    os.chdir(r"E:\pythonProject2")
 
     path1 = r"1.exe"
 
