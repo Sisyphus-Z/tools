@@ -21,6 +21,8 @@ headers1={
 
 r1 = requests.get('http://www.baidu.com',headers=headers1)
 
+print(r1.encoding)
+print(r1.content)
 
 with open('test.html','w') as f:
     f.write(r1.text)
